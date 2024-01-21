@@ -14,8 +14,7 @@ def scanO(chanal):
                 O_list.append(i)
                 O_list.append(j)
     return O_list
-def checkwinX(chanal,x_list):
-    status = "-"
+def checkwinX(chanal,status):
     X = 0
     for i in range(3):
         if chanal[0][i] == "X":
@@ -38,7 +37,82 @@ def checkwinX(chanal,x_list):
             status = "Xwin"
         else:
             X=0
+    for i in range(3):
+        if chanal[i][0] == "X":
+            X += 1
+        if X == 3:
+            status = "Xwin"
+        else:
+            X=0
+    for i in range(3):
+        if chanal[i][1] == "X":
+            X += 1
+        if X == 3:
+            status = "Xwin"
+        else:
+            X=0
+    for i in range(3):
+        if chanal[i][2] == "X":
+            X += 1
+        if X == 3:
+            status = "Xwin"
+        else:
+            X=0
+    for i in range(3):
+        if chanal[0][0] == "X" and chanal[1][1] == "X" and chanal[2][2] == "X":
+            status = "Xwin"
+    return status
+def checkwinO(chanal,status):
+    X = 0
+    for i in range(3):
+        if chanal[0][i] == "O":
+            X += 1
+        if X == 3:
+            status = "Owin"
+        else:
+            X=0
+    for i in range(3):
+        if chanal[1][i] == "O":
+            X += 1
+        if X == 3:
+            status = "Owin"
+        else:
+            X=0
+    for i in range(3):
+        if chanal[2][i] == "O":
+            X += 1
+        if X == 3:
+            status = "Owin"
+        else:
+            X=0
+    for i in range(3):
+        if chanal[i][0] == "O":
+            X += 1
+        if X == 3:
+            status = "Owin"
+        else:
+            X=0
+    for i in range(3):
+        if chanal[i][1] == "X":
+            X += 1
+        if X == 3:
+            status = "Xwin"
+        else:
+            X=0
+    for i in range(3):
+        if chanal[i][2] == "X":
+            X += 1
+        if X == 3:
+            status = "Xwin"
+        else:
+            X=0
+    for i in range(3):
+        if chanal[0][0] == "X" and chanal[1][1] == "X" and chanal[2][2] == "X":
+            status = "Xwin"
+    return status
+
 number_round = 1
+status = "-"
 x1 = 0
 x2 = 0
 chanal = [
